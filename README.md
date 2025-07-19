@@ -66,7 +66,7 @@ priority-todo-app/
 2. Open index.html in your browser — no backend required.
 
 # 🛡️ License
-This project is open source and available under the MIT License.
+This project is open source and available under the [MIT License](LICENCE.txt).
 
 # 🙌 Author
 Made with 💙 by Jenish Allen Immanuel J
