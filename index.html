@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="background-animation"></div>
+  <header>
+    <h1>📋 To-Do List</h1>
+    <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });">
+      Contact Us
+    </button>
+  </header>
+
+  <main class="todo-app">
+    <div class="input-section">
+      <input type="text" id="taskInput" placeholder="Enter task..." />
+      <select id="taskCategory">
+        <option value="urgentImportant">Urgent & Important</option>
+        <option value="notUrgentImportant">Not Urgent & Important</option>
+        <option value="urgentNotImportant">Urgent & Not Important</option>
+        <option value="notUrgentNotImportant">Not Urgent & Not Important</option>
+      </select>
+      <button onclick="addTask()">Add</button>
+    </div>
+
+    <div class="grid-container">
+      <div class="task-box" id="urgentImportant">
+        <h3>Urgent & Important</h3>
+        <ul></ul>
+      </div>
+      <div class="task-box" id="notUrgentImportant">
+        <h3>Not Urgent & Important</h3>
+        <ul></ul>
+      </div>
+      <div class="task-box" id="urgentNotImportant">
+        <h3>Urgent & Not Important</h3>
+        <ul></ul>
+      </div>
+      <div class="task-box" id="notUrgentNotImportant">
+        <h3>Not Urgent & Not Important</h3>
+        <ul></ul>
+      </div>
+    </div>
+  </main>
+
+  <footer id="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name"  />
+      <input type="text" placeholder="Your Email"  />
+      <textarea rows="4" placeholder="Your Message"></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

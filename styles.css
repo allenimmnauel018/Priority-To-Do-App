@@ -1,0 +1,275 @@
+/* === Import Poppins === */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* === Base Reset & Typography === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #e0f7fa, #e1bee7, #fce4ec, #e8f5e9);
+  background-size: 400% 400%;
+  animation: backgroundShift 15s ease infinite;
+  overflow-x: hidden;
+}
+
+@keyframes backgroundShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* === Header === */
+header {
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+header h1 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+header button {
+  padding: 10px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+header button:hover {
+  background-color: #0056b3;
+}
+
+/* === App Wrapper === */
+.todo-app {
+  max-width: 1300px;
+  padding: 2rem;
+  margin: auto;
+}
+
+/* === Input Section === */
+.input-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.input-section input,
+.input-section select {
+  padding: 10px;
+  width: 220px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(4px);
+  font-family: 'Poppins', sans-serif;
+}
+
+.input-section button {
+  padding: 10px 16px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.input-section button:hover {
+  background: #218838;
+}
+
+/* === Styled Dropdown === */
+.input-section select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(6px);
+  color: #333;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  position: relative;
+  cursor: pointer;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.input-section select:hover {
+  border-color: #888;
+}
+
+.input-section select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
+
+/* Option styling - limited by browser support */
+.input-section option {
+  background: #ffffffee;
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Optional: Add custom arrow using background image (for modern browsers) */
+.input-section select {
+  background-image: url("data:image/svg+xml,%3Csvg fill='%23666' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px 16px;
+  padding-right: 36px;
+}
+
+/* === Task Grid === */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 280px);
+  gap: 20px;
+}
+
+
+.task-box {
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  height: 280px;
+  width: 100%;
+
+  /* Hide scrollbar */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.task-box::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+.task-box:hover {
+  transform: translateY(-4px);
+}
+
+.task-box h3 {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.task-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.task-box li {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-box li button {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.task-box li button:hover {
+  background: #c82333;
+}
+
+/* === Contact Section === */
+footer {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
+  padding: 3rem 2rem;
+  margin-top: 3rem;
+  text-align: center;
+}
+
+footer h2 {
+  font-size: 20px;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+footer form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 400px;
+  margin: auto;
+}
+
+footer input,
+footer textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(6px);
+  font-family: 'Poppins', sans-serif;
+}
+
+footer button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+}
+
+footer button:hover {
+  background-color: #0056b3;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .input-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .task-box {
+    height: 240px;
+  }
+}
