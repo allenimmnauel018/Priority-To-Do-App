@@ -21,8 +21,7 @@ A modern, responsive to-do list application that uses the Eisenhower Matrix to p
 
 ## 🖼️ Demo
 
-![Screenshot](./screenshot.png) <!-- Replace with actual screenshot path -->
-
+![Screenshot](./screenshot.png) 
 ---
 
 ## 📂 Project Structure
@@ -72,5 +71,3 @@ This project is open source and available under the [MIT License](LICENSE.txt).
 Made with 💙 by Jenish Allen Immanuel J
 
 ---
-
-Let me know if you'd like the screenshot, license, or GitHub Pages deployment section added too!
